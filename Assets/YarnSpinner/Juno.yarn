@@ -1,0 +1,261 @@
+﻿title: Start
+tags:
+position: -582,-691
+---
+Mysterious voice:Juno!
+Mysterious voice:Wake up already!
+    ->"Keep sleeping"
+        <<jump WaterSplash>>
+    ->"Better listen to your mother!"
+        <<jump WakingUp>>
+===
+title: WakingUp
+position: -441,-433
+---
+Juno: Yes Mum.
+Juno: Ugh! It is still 5:00 AM.
+<<jump WakingUpEarly>>
+===
+title: WaterSplash
+position: -771,-434
+---
+<<audio1 SpriteHold>>
+Juno: Blug!
+Juno: Glug!
+<<jump WaterWakeUp>>
+===
+title: WakingUpEarly
+position: -440,-229
+---
+<<change2 SpriteHold>>
+Juno: I am really tired.
+<<jump GettingReady>>
+===
+title: WaterWakeUp
+position: -771,-229
+---
+Juno: "Coughing"
+Juno: What is going on!
+<<set $MentalDamage += 1>>
+    -> Juno: Who are you?
+        <<jump SarcasticMom>>
+    -> Juno: Stop mom, I'm awake
+        Mom: Good, now get ready and get downstairs. We need to talk.
+        <<jump GettingReady>>
+===
+title: SarcasticMom
+position: -878,95
+---
+Mom: I am your mother!
+Mom: Didn't you read the first options?
+Mom: Now get ready! We need to talk.
+<<jump GettingReady>>
+===
+title: GettingReady
+position: -605,95
+---
+<<change2 SpriteHold>>
+Juno: I should find something to wear today
+    -> "Open your closet"
+        <<jump GettingDressed>>
+    -> "Go back to sleep"
+        <<jump WakingUpLate>>
+===
+title: GettingDressed
+position: -604,434
+---
+<<change2 SpriteHold>>
+<<audio2 SpriteHold>>
+Juno: I should oil the hinges... Some day.
+    -> "Wear your Cowboy Costume"
+        Juno: So I'll go around dressed like this.
+        <<set $MentalDamage += 1>>
+        <<jump GreetingMom>>
+    -> "Wear your regular fit" 
+        <<jump GreetingMom>>
+===
+title: WakingUpLate
+position: -417,250
+---
+<<change1 SpriteHold>>
+<<audio1 SpriteHold>>
+Mom: You asked for this!
+Juno: Wha... Blurg, Glurg!
+Mom: Now get dressed, and get downstairs!
+Juno: Ugh, I don't feel so good
+<<set $MentalDamage += 1>>
+<<jump GettingDressed>>
+===
+title: GreetingMom
+position: -603,634
+---
+<<audio3 SpriteHold>>
+<<change3 SpriteHold>>
+Juno: Morning mom, its really sunny today.
+Juno: I think I'll go to the Lake today.
+Mom: Not so fast honey!
+Mom: I need you to run an errand for me.
+Juno: Right now?
+Mom: It is kinda urgent
+Mom: Now listen.
+Mom: We are almost out of PC.
+Mom: I need you to go to ONTARIO-PC(Ontario Personal Computer Retail).
+Mom: and buy us something new.
+Juno: ONTARIO-PC? That place is huge, it's gonna take all day to find something.
+Mom: Don't worry, I'll help you choose a PC.
+Juno: Are you coming with me? 
+Juno: Why are you involving me with this then?
+Mom: Just listen to me, I'm not coming with you.
+Mom: But we will do a practice before you go.
+Mom: You need to be careful with the ONTARIO-PC
+Mom: They will try to sell you something expensive that we don't need
+Mom: or they will try to make you buy a bad PC for whatever you have in your pocket.
+Mom: So before you go, I will make sure you know what to look for, 
+Mom: and how to tell if a PC is not worth it.
+    ->Juno: I thought there were no more classes today.
+        Mom: If you keep being a smart-ass there won't be a holiday for you today.
+        <<set $MentalDamage += 1>>
+        <<jump TutorialShopping>>
+    ->Juno: Yes Ma'am!.
+        <<jump TutorialShopping>>
+===
+title: TutorialShopping
+position: -603,819
+---
+Mom: Ok then, lets start.
+Mom: I'll pretend to be Nigel the Salesperson.
+Mom: Hope you won't encounter him but, regardless you should be ready if he shows up.
+Mom(Nigel): Welcome sir, how may I help you today?
+Mom(Nigel): Maybe you are interested in the Suprema Deluxe Max 9000 Uber Price Edition?
+Juno: Well...
+    ->Juno: Sure, tell me more.
+        <<jump DeluxeMax9000>>
+    ->Juno: No, I won't fall for your tricks!
+        <<jump MotherApproved>>
+===
+title: DeluxeMax9000
+position: -740,1060
+---
+Mom(Nigel): Excellent choice sir!
+Mom(Nigel): I would suggest getting at least 2 anti-virus programs,
+Mom(Nigel): and a 14 year protection program for very specific situations.
+Juno: Sure, whatever.
+Juno: Get me everything asap, I want to get this over with.
+Mom(Nigel): Excellent choice sir! How are you going to pay for it?
+Juno: With my mom's credit card.
+Mom: You did well. Great!
+Mom: If you want to bankrupt us.
+Mom: Maybe I should not give you any allowance, since you are spending so recklessly.
+Juno: Are you serious now!
+<<set $MentalDamage += 5>>
+Mom: Yeah, I am really concerned now.
+<<jump FinalScreenChooser>>
+===
+title: MotherApproved
+position: -478,1059
+---
+Mom: You are doing great sweetie. Now keep going!
+Mom(Nigel): I am sorry sir, but I mean no harm.
+Mom(Nigel): I am just an old jolly man.
+    ->Juno: You are right! What am I doing?
+        Juno: I will listen to you from now on.
+        <<jump NigelWinsAgain>>
+    ->Juno: Cut the small talk you old trickster!
+        <<jump MotherDoubleApproved>>
+===
+title: NigelWinsAgain
+position: -504,1442
+---
+Mom: Unbeliviable!
+Mom: You keep falling for it!
+Mom: I can't belive how gullible you are!
+<<set $MentalDamage += 2>>
+Mom: I'll act as if you did alright!
+<<jump MotherTripleProud>>
+===
+title: MotherDoubleApproved
+position: -218,1257
+---
+Mom(Nigel): Ok, you win. How much do you have?
+    ->Juno: Heh! I knew I could defeat you.
+        Juno: Let me check my wallet.
+        <<jump MotherConfused>>
+    ->Juno: We'll talk about it if I find the computer I want here.
+        <<jump MotherTripleProud>>
+===
+title: MotherConfused
+position: 84,2130
+---
+Mom: What are you doing?
+Juno: What?
+Mom: He is gonna sell you a bad computer, for whatever you have.
+Mom: Honestly, I think I should send you to work this summer, you lack the social skills
+<<set $MentalDamage += 5>>
+<<jump FinalScreenChooser>>
+===
+title: MotherTripleProud
+position: -304,1635
+---
+Mom(Nigel): Totally understandable sir. As you wish!
+Mom(Nigel): So what do you have in mind?
+    ->Juno: Something simple for the household stuff. No need to go crazy. 
+        <<jump MotherQuadrupleProud>>
+    ->Juno: Something good for gaming, that is the priority!
+        <<jump MotherCaught>>
+===
+title: MotherQuadrupleProud
+position: -499,1868
+---
+Mom: Well done! I think you are ready!
+<<set $Moms_Approval += 1>>
+<<jump FinalScreenChooser>>
+===
+title: MotherCaught
+position: -167,1946
+---
+Mom: Oh! So that is why your grades are struggling.
+Mom: I should take action on your PC as well!
+Juno: Wait, what? No!
+<<set $MentalDamage += 5>>
+<<jump FinalScreenChooser>>
+===
+title: FinalScreenChooser
+position: -884,2216
+---
+<<if $MentalDamage < 2>>
+    Mom: You did very well!
+    Mom: You deserve a reward!
+    Mom: Here is some "extra" pocket change.
+    <<jump ExtraBudgetEnding>>
+<<elseif $MentalDamage < 5 && $MentalDamage >= 2>>
+    Mom: Ok honey, your performance was good enough.
+    Mom: You are ready to go shopping at ONTARIO-PC.
+    Mom: Here is some pocket change.
+    <<jump RegularBudgetEnding>>
+<<else>>
+    Mom: Oh, my poor baby!
+    <<jump MentalDamageEnding>>
+<<endif>>
+===
+title: ExtraBudgetEnding
+position: -1173,2433
+---
+<<audio4 SpriteHold>>
+<<change4 SpriteHold>>
+Narrator: Juno leaves the home, extra proud and extra rich!
+===
+title: RegularBudgetEnding
+position: -935,2546
+---
+<<audio4 SpriteHold>>
+Narrator: Juno leaves the home, ready to take on the challenges of buying a PC! 
+<<change4 SpriteHold>>
+Narrator: From ONTARIO-PC!!
+===
+title: MentalDamageEnding
+position: -674,2630
+---
+<<audio5 SpriteHold>>
+<<change5 SpriteHold>>
+Narrator: Juno doesn't feel so good, he is traumatized for the day and can't leave the house!
+===
